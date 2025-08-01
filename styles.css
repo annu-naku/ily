@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 400px;
+    height: 300px;
+    position: relative;
+    overflow: visible;
+}
+
+.question {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100px;
+    position: relative;
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 2rem;
+    min-width: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.yes-btn:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.no-btn:hover {
+    background: linear-gradient(135deg, #d32f2f, #f44336);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.message {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Progressive size increases for yes button */
+.size-2 {
+    padding: 3rem 5rem;
+    font-size: 1.6rem;
+    z-index: 2;
+}
+
+.size-3 {
+    padding: 4.5rem 7.5rem;
+    font-size: 1.8rem;
+    z-index: 3;
+}
+
+.size-4 {
+    padding: 7rem 9rem;
+    font-size: 2rem;
+    z-index: 4;
+}
+
+.size-5 {
+    padding: 8rem 10rem;
+    font-size: 2.5rem;
+    z-index: 5;
+}
+
+.size-final {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    font-size: 4rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-width: auto;
+}
+
+.final-page {
+    width: 400px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+/* Success page styles */
+.success-body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+.success-container {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.success-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hearts {
+    font-size: 3rem;
+    margin: 2rem 0;
+    animation: pulse 2s infinite;
+}
+
+.restart-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin-top: 2rem;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: 250px;
+        padding: 1.5rem;
+    }
+    
+    .question {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        height: 120px;
+    }
+    
+    .btn {
+        font-size: 1.2rem;
+        min-width: 150px;
+    }
+    
+    .size-final {
+        font-size: 3rem;
+    }
+    
+    .success-title {
+        font-size: 2rem;
+    }
+    
+    .final-page {
+        width: 90%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .question {
+        font-size: 1.5rem;
+    }
+    
+    .size-final {
+        font-size: 2.5rem;
+    }
+    
+    .success-title {
+        font-size: 1.5rem;
+    }
+}
